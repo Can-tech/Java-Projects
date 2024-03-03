@@ -1,7 +1,9 @@
+package starter2.src;
+
 import java.util.Scanner;
 
 public class App {
-    public static void main( String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         int salary = 1000;
         int bonus = 250;
 

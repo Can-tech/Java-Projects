@@ -1,6 +1,8 @@
+package starter4;
+
 import java.util.Scanner;
 
-public class app {
+public class Proj {
     public static void main(String args[]){
         System.out.println("enter your letter grade: ");
         Scanner scanner = new Scanner(System.in);
@@ -28,10 +30,7 @@ public class app {
         }
         scanner.close();
         System.out.println(message);
-
-    }
-    
-    
+    }    
 }
 
 
