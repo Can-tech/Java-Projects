@@ -4,6 +4,9 @@ public class User{
     private String _name;//use underscore _ to prevent naming contradict
     private String _membership="Bronze";//otherwise use "this" keyword
 
+    public String toString(){
+        return get_name() + " " + get_membership();
+    }
 
     public User(){
         //Overloaded constructors
