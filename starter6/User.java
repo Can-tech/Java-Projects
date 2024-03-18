@@ -1,8 +1,14 @@
 package starter6;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
     private String _email;
     private String _password;
+    public User(){
+        
+    }
     public User(String email, String password){
         set_email(email);
         set_password(password);
@@ -15,6 +21,12 @@ public class User {
             return true;
         }else{
             return false;
+        }
+    }
+    public static List<User> admins;
+    public static void print_admin_emails(){
+        for(User u : admins){
+            System.out.println(u.get_email());
         }
     }
     void set_email(String email){

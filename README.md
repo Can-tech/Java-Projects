@@ -95,6 +95,10 @@ public class User{
 public class User{
   private String _name;
   private String _membership = "Bronze";
+  public User(String name, String membership){
+    set_name(_name);
+    set_membership(_membership)
+  }
   public String toString(){
     return get_name() + " " + get_membership();
   }
@@ -117,6 +121,121 @@ public class OOP{
 }
 ```
 
-### Generic Lists
+### 5 Generic Lists
+
+> It is complicated to work with 100 objects. So insted of creating user variables one by one. Tt is ideal to create a list that can contain numerous users.
+
+> Since OOP allows us to create our own type. We can use generically typed things and just use that as the type. The most common example of generic type is generic list.
+
+```
+public class User{
+  private String _name;
+  public User(String name, String membership){
+    set_name(_name);
+  }
+  void set_name(String name){
+      this.name = name
+  }
+}
+public class OOP{
+  public static void main(String[] args){
+    ArrayList<User> users = new ArrayList<User>();
+    user.add(new User("Caleb"));
+    user.add(new User("Jason"));
+    user.add(new User("Gibson"));
+    for(nt i = 0; i < user.size();i++){
+        System.out.println(users.get(i).get_name());
+
+    }
+  }
+}
+```
+
+### 6 Static Data Members
+
+> Anything static on a class is accessed on that class directly, instead of accessing it on an object.
+
+```
+public class User{
+  private String _name;
+
+  public static List<User> admin;
+
+  public User(String name, String membership){
+    set_name(_name);
+  }
+  void set_name(String name){
+      this.name = name
+  }
+}
+public class OOP{
+  public static void main(String[] args){
+    User.admins = new ArrayList<User>();
+    User.admins.add(new User("Caleb"));
+    User.admins.add(new User("Jason"));
+    User.admins.add(new User("Gibson"));
+    for(nt i = 0; i < User.admins.size();i++){
+        System.out.println(users.get(i).get_name());
+    }
+  }
+}
+```
+
+### 7 Static Methods
+
+```
+    public static void print_admin_emails(){
+        for(User u : admins){
+            System.out.println(u.get_email());
+        }
+    }
+```
+
+### 8 Inheritance
+
+> We can create derived classes from another classes.
+
+> Example: User and Student Classes. Student class inherits all fileds and method from the User class and we can just add some extra stuff.
+
+> In java there are "extends" and "implements" keywords to inherit class. By using implements we inherit interfaces.
+> public class Student extend User{}: A student is a user(being)
+> Student implements User{}: A student is behaving as a user(behaving)
 
 Note: Don't use "-" sign when naming the folders the folder name affects the package name in java. And package names is important when i try to accees other files and classes.
+
+### Polymorpsm
+
+> We can have 2 child class inherited from 1 parent class.
+
+> polymorphism allows us to perform a single action in different ways.
+
+```
+//From w3scools.com
+class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println("The pig says: wee wee");
+  }
+}
+
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+class Main {
+  public static void main(String[] args) {
+    Animal myAnimal = new Animal();  // Create a Animal object
+    Animal myPig = new Pig();  // Create a Pig object
+    Animal myDog = new Dog();  // Create a Dog object
+    myAnimal.animalSound();
+    myPig.animalSound();
+    myDog.animalSound();
+  }
+}
+```
